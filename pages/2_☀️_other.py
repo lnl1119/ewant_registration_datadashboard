@@ -19,21 +19,21 @@ with open('style.css') as f:
 # st.sidebar.subheader('Donut chart parameter')
 # donut_theta = st.sidebar.selectbox('Select data', ('q2', 'q3'))
 
-st.sidebar.subheader('💥每日登入人數選項')
-plot_data = st.sidebar.multiselect('Select data', ['2022', '2021', '2020', '2019', '2018', '2017', '2016'])
-plot_height = st.sidebar.slider('Specify plot height', 300, 600, 500) # 高度可調整範圍預設為250
+# st.sidebar.subheader('💥每日登入人數選項')
+# plot_data = st.sidebar.multiselect('Select data', ['2022', '2021', '2020', '2019', '2018', '2017', '2016'])
+# plot_height = st.sidebar.slider('Specify plot height', 300, 600, 500) # 高度可調整範圍預設為250
 
 # Create a datetime slider with a range of one week
 start_date = datetime.date.today()
 end_date = start_date + datetime.timedelta(weeks=1)
  
-selected_date = st.sidebar.slider(
-    "Select a date range",
-    min_value=start_date,
-    max_value=end_date,
-    value=(start_date, end_date),
-    step=datetime.timedelta(days=1),
-)
+# selected_date = st.sidebar.slider(
+#     "Select a date range",
+#     min_value=start_date,
+#     max_value=end_date,
+#     value=(start_date, end_date),
+#     step=datetime.timedelta(days=1),
+# )
 
 # today = datetime.date.today()
 # tomorrow = today + datetime.timedelta(days=1)
@@ -167,6 +167,6 @@ st.divider()
 #         legend='bottom', 
 #         use_container_width=True)
 
-# Row C
-st.markdown('### ewant平台每日登入人數統計圖')
-st.line_chart(login_20162022_raw, x = 'date', y = plot_data, height = plot_height)
+# # Row C
+# st.markdown('### ewant平台每日登入人數統計圖')
+# st.line_chart(login_20162022_raw, x = 'date', y = plot_data, height = plot_height)
