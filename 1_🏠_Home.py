@@ -15,9 +15,9 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # data
-login_20162022_raw = pd.read_csv("/Users/leeliang/Desktop/dashboard_registration/login_2016to2022.csv")
-regeister_20142022_raw = pd.read_csv("/Users/leeliang/Desktop/dashboard_registration/register_2014to2022.csv")
-login_20162022_done = pd.read_csv("/Users/leeliang/Desktop/dashboard_registration/login_20162022_done.csv")
+login_20162022_raw = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/login_2016to2022.csv")
+regeister_20142022_raw = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/register_2014to2022.csv")
+login_20162022_done = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/login_20162022_done.csv")
 # variable
 today_date = datetime.date.today()
 yesterday_date = today_date - datetime.timedelta(days=1)

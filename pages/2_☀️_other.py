@@ -4,11 +4,20 @@ import plost
 import plotly.express as px
 import datetime
 
-st.sidebar.subheader('Heat map parameter')
-time_hist_color = st.sidebar.selectbox('Color by', ('temp_min', 'temp_max')) 
+st.set_page_config(page_title= "ewant data dashboard",
+                page_icon = "🌊",
+                layout='wide', 
+                initial_sidebar_state='expanded')
 
-st.sidebar.subheader('Donut chart parameter')
-donut_theta = st.sidebar.selectbox('Select data', ('q2', 'q3'))
+
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# st.sidebar.subheader('Heat map parameter')
+# time_hist_color = st.sidebar.selectbox('Color by', ('temp_min', 'temp_max')) 
+
+# st.sidebar.subheader('Donut chart parameter')
+# donut_theta = st.sidebar.selectbox('Select data', ('q2', 'q3'))
 
 st.sidebar.subheader('💥每日登入人數選項')
 plot_data = st.sidebar.multiselect('Select data', ['2022', '2021', '2020', '2019', '2018', '2017', '2016'])
@@ -52,11 +61,11 @@ selected_date = st.sidebar.slider(
 # col3.metric("Humidity", "86%", "4%")
 
 # Row B
-seattle_weather = pd.read_csv('/Users/leeliang/Desktop/dashboard-v2-master/raw.githubusercontent.com_tvst_plost_master_data_seattle-weather.csv', parse_dates=['date'])
-stocks = pd.read_csv('/Users/leeliang/Desktop/dashboard-v2-master/raw.githubusercontent.com_dataprofessor_data_master_stocks_toy.csv')
-login_20162022_done = pd.read_csv("/Users/leeliang/Desktop/dashboard_registration/login_20162022_done.csv")
-login_20162022_raw = pd.read_csv("/Users/leeliang/Desktop/dashboard_registration/login_2016to2022.csv")
-register20230717_df = pd.read_csv("/Users/leeliang/Desktop/dashboard_registration/registerdata20230717.csv")
+# seattle_weather = pd.read_csv('/Users/leeliang/Desktop/dashboard-v2-master/raw.githubusercontent.com_tvst_plost_master_data_seattle-weather.csv', parse_dates=['date'])
+# stocks = pd.read_csv('/Users/leeliang/Desktop/dashboard-v2-master/raw.githubusercontent.com_dataprofessor_data_master_stocks_toy.csv')
+login_20162022_done = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/login_20162022_done.csv")
+login_20162022_raw = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/login_2016to2022.csv")
+register20230717_df = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/registerdata20230717.csv")
 
 
 # data preprocessing for register
@@ -101,7 +110,7 @@ with c1:
     # st.dataframe resources
     # https://docs.streamlit.io/library/api-reference/data/st.dataframe
     # https://docs.kanaries.net/tutorials/Streamlit/streamlit-dataframe
-    domain_expander = st.expander("點我看資料")
+    domain_expander = st.expander("點我查看資料")
     domain_expander.dataframe(
         domain_count_df,
         column_config={
@@ -120,7 +129,7 @@ with c2:
     country_pie_chart = px.pie(country_count_df, values='count', names='country')
     country_pie_chart.update_traces(textposition='inside', textinfo='percent+label')
     st.plotly_chart(country_pie_chart)
-    country_expander = st.expander("點我看資料")
+    country_expander = st.expander("點我查看資料")
     #country_expander.table(country_count_df.head(30))
     country_expander.dataframe(
         country_count_df,
@@ -136,27 +145,27 @@ with c2:
 ##########################################
 st.divider()
 ##########################################
-c1, c2 = st.columns((7,3))
-with c1:
-    st.markdown('### Heatmap')
-    plost.time_hist(
-    data=seattle_weather,
-    date='date',
-    x_unit='week',
-    y_unit='day',
-    color=time_hist_color,
-    aggregate='median',
-    legend=None,
-    height=345,
-    use_container_width=True)
-with c2:
-    st.markdown('### Donut chart')
-    plost.donut_chart(
-        data=stocks,
-        theta=donut_theta,
-        color='company',
-        legend='bottom', 
-        use_container_width=True)
+# c1, c2 = st.columns((7,3))
+# with c1:
+#     st.markdown('### Heatmap')
+#     plost.time_hist(
+#     data=seattle_weather,
+#     date='date',
+#     x_unit='week',
+#     y_unit='day',
+#     color=time_hist_color,
+#     aggregate='median',
+#     legend=None,
+#     height=345,
+#     use_container_width=True)
+# with c2:
+#     st.markdown('### Donut chart')
+#     plost.donut_chart(
+#         data=stocks,
+#         theta=donut_theta,
+#         color='company',
+#         legend='bottom', 
+#         use_container_width=True)
 
 # Row C
 st.markdown('### ewant平台每日登入人數統計圖')
