@@ -1,9 +1,39 @@
 # EWANT Dashboard
 
-ewant registration data dashboard
+[ewant registration data dashboard](https://ewant-dashboard.streamlit.app/)
+
+## plan
+
+1. 補齊原本有的圖表
+2. 連mysql database
+3. [選課概況](https://docs.google.com/spreadsheets/d/10NDPwwgctn-d_WxejotXFRmQHzWCONnT/edit#gid=898642238)
+3. 數據的處理
+    1. 用email domain 區分高中還是大學（高中會長大）
+    2. 註冊人數填寫的資料能不能強制
+    3. 生日怎麼算
+4. 近期開課（時間軸+開課名稱）
+5. 
+
+## pages
+1. 概覽（🏠Home）
+2. 折線圖（☀️other）
+3. 各種圓餅圖
 
 
-## Demo App
-
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://dash-board.streamlitapp.com/)
-
+## 原本有的資料
+* [ ] 靜態
+    * [ ] 總註冊人數
+    * [ ] 上週註冊人數（比較漲幅）
+    * [ ] 本年度註冊人數（比較漲幅）
+    * [ ] 本週註冊人數（比較漲幅）
+    * [ ] 本週註冊後有選課人數（比較漲幅）
+* [ ] 每週註冊人數2016-2023（折線圖）
+* [ ] 每日登入人數2016-2023（折線圖） 
+* [ ] 選課概況
+    * [ ] 因為什麼課程開出來，所以人數暴衝
+* [ ] 註冊者信箱分佈（圓餅圖）
+* [ ] 註冊者國家分佈（圓餅圖）
+* [ ] 註冊者性別分佈（圓餅圖）
+* [ ] 註冊者年齡分佈（扣除未填圓餅圖）&（柱狀圖本週人數+折線圖週成長率）
+* [ ] 註冊者職業分佈（扣除未填圓餅圖）&（柱狀圖本週人數+折線圖週成長率）
+* [ ] 註冊者學歷分佈（扣除未填圓餅圖）&（柱狀圖本週人數+折線圖週成長率）

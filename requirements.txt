@@ -2,3 +2,4 @@ streamlit
 pandas
 plost
 plotly
+mysql-connector
