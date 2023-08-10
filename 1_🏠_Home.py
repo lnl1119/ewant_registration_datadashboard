@@ -65,9 +65,9 @@ with st.sidebar:
         default_index = 0,
         styles={
                 #"container": {"padding": "0!important", "background-color": "#fafafa"},
-                "icon": {"color": "orange", "font-size": "22px"},
+                "icon": {"color": "orange", "font-size": "20px"},
                 "nav-link": {
-                    "font-size": "20px",
+                    "font-size": "16px",
                     "text-align": "left",
                     "margin": "0px",
                     "--hover-color": "#eee",
@@ -78,7 +78,7 @@ with st.sidebar:
 
 # home page
 if selected == "Home":
-    st.title(f"{selected}")
+    #st.title(f"{selected}")
     # sidebar
     st.sidebar.subheader('💥每週註冊人數選項')
     register_year_list = ['2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014']
@@ -146,7 +146,6 @@ if selected == "Home":
     # https://discuss.streamlit.io/t/select-all-on-a-streamlit-multiselect/9799/2
     # https://discuss.streamlit.io/t/change-metrci-color-font-background-and-style/25309
     # https://discuss.streamlit.io/t/select-all-checkbox-that-is-linked-to-selectbox-of-options/18521
-    st.markdown('### 大綱')
 
     total_registration_count = 477275
     lastweek_registration_count = 476849
@@ -199,7 +198,7 @@ if selected == "Home":
     #####################################################
 
 if selected == "other":
-    st.title(f"{selected}")
+    # st.title(f"{selected}")
     
     # data preprocessing for register
     ## email domain

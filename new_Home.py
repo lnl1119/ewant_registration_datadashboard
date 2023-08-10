@@ -285,23 +285,6 @@ if st.session_state.sidebar_state == 'expanded':
 # when sidebar hides, navigation bar is on the main page
 elif st.session_state.sidebar_state == 'collapsed': 
     # no sidebar navigation menu
-    # selected2 = option_menu(None, ["Home", "other"], 
-    # icons=['house', 'cloud-upload'], 
-    # menu_icon="cast", default_index=0, orientation="horizontal",
-    # styles={
-    #             #"container": {"padding": "0!important", "background-color": "#fafafa"},
-    #             "icon": {"color": "orange", "font-size": "22px"},
-    #             "nav-link": {
-    #                 "font-size": "20px",
-    #                 "text-align": "left",
-    #                 "margin": "0px",
-    #                 "--hover-color": "#eee",
-    #             },
-    #             "nav-link-selected": {"background-color": "#36b9cc"},
-    #         },
-    # )
-
-    
     selected2 = option_menu(
         menu_title = None, 
         options=["Home","other"], 
@@ -320,7 +303,6 @@ elif st.session_state.sidebar_state == 'collapsed':
                 "nav-link-selected": {"background-color": "#36b9cc"},
             },
         orientation="horizontal",
-        navbar_mode = 'pinned',
     )
     #hide_streamlit_markers=False
     # selected2
