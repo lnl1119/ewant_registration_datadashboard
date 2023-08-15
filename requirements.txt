@@ -3,3 +3,5 @@ pandas
 plost
 plotly
 mysql-connector
+streamlit_option_menu
+hydralit_components
