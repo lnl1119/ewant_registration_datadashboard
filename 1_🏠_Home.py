@@ -23,15 +23,12 @@ with open('style.css') as f:
 
 
 
-menu_data = [
-    {'label':"🏠"},
-    {'label':"Book"},
-    {'label':"Component"},
-    {'label':"Dashboard"},
-    {'label':"Right End"},
-]
+# menu_data = [
+#     {'label':"🏠"},
+#     {'label':"other"},
+# ]
 
-menu_id = hc.nav_bar(menu_definition=menu_data, sticky_mode='pinned')
+# menu_id = hc.nav_bar(menu_definition=menu_data, sticky_mode='pinned')
 
 
 # data
