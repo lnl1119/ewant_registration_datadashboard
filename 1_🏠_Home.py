@@ -184,16 +184,17 @@ if selected == "Home":
     # https://discuss.streamlit.io/t/change-metrci-color-font-background-and-style/25309
     # https://discuss.streamlit.io/t/select-all-checkbox-that-is-linked-to-selectbox-of-options/18521
 
-    total_registration_count = 477275
-    lastweek_registration_count = 476849
+    total_registration_count = 478262
+    lastweek_registration_count = 477754
     increasefromlastweek_total_registration_count = total_registration_count - lastweek_registration_count
-    thisyear_registration_count = 39664
-
+    thisyear_registration_count = 40648
+    lastyear_registration_count = 31573
+    increasecomparelastyear_registration_count = thisyear_registration_count - lastyear_registration_count
     Acol1, Acol2, Acol3, Acol4 = st.columns(4)
     Acol1.metric("總註冊人數", "{:,}".format(total_registration_count)+"人", str(increasefromlastweek_total_registration_count)+"人")
-    Acol2.metric("上週註冊人數", "{:,}".format(lastweek_registration_count)+"人", "-8%")
-    Acol3.metric("本年度註冊人數", "{:,}".format(thisyear_registration_count)+"人", "4%")
-    Acol4.metric("近期增加人數原因：", "SOS")
+    Acol2.metric("上週註冊人數", "{:,}".format(lastweek_registration_count)+"人")
+    Acol3.metric("本年度註冊人數", "{:,}".format(thisyear_registration_count)+"人", str(increasecomparelastyear_registration_count)+"人")
+    Acol4.metric("近期增加人數原因：", "  ")
     # col1.metric("累積至昨日"+str(today_date), "70 °F", "1.2 °F")
     # col2.metric("昨日"+str(yesterday_date), "9 mph", "-8%")
     # col3.metric("上週"+str(lastweek_date), "86%", "4%")
