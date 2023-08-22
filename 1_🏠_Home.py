@@ -184,10 +184,10 @@ if selected == "Home":
     # https://discuss.streamlit.io/t/change-metrci-color-font-background-and-style/25309
     # https://discuss.streamlit.io/t/select-all-checkbox-that-is-linked-to-selectbox-of-options/18521
 
-    total_registration_count = 478262
-    lastweek_registration_count = 477754
+    total_registration_count = 482656
+    lastweek_registration_count = 478731
     increasefromlastweek_total_registration_count = total_registration_count - lastweek_registration_count
-    thisyear_registration_count = 40648
+    thisyear_registration_count = 44990
     lastyear_registration_count = 31573
     increasecomparelastyear_registration_count = thisyear_registration_count - lastyear_registration_count
     Acol1, Acol2, Acol3, Acol4 = st.columns(4)
