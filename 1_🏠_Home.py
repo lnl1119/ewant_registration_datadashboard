@@ -6,11 +6,6 @@ import pandas as pd
 import plost
 import plotly.express as px
 import datetime
-# import mysql.connector
-# mysql.connector.connect(
-#     host = 
-# )
-
 
 st.set_page_config(page_title= "ewant data dashboard",
                 page_icon = "🌊",
@@ -20,6 +15,54 @@ st.set_page_config(page_title= "ewant data dashboard",
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+
+# import mysql.connector
+# connection = mysql.connector.connect(**st.secrets.mysql)
+# # mdl_user_info_field_query = "SELECT * FROM `mdl_user_info_field`"
+# # field_df = pd.read_sql(mdl_user_info_field_query, con = connection).iloc[:, :2].set_index('id')
+# # field_df_dict = list(field_df.to_dict(orient='dict').values())[0]
+# field_df_dict = {
+#     1: 'title',
+#     2: 'unit',
+#     3: 'dept',
+#     4: 'gender',
+#     5: 'age',
+#     6: 'jobstatus',
+#     7: 'company',
+#     8: 'studystatus',
+#     9: 'edulevel',
+#     10: 'paycode',
+#     12: 'birthday'
+#     }
+
+# #@st.cache_data(ttl=43200)
+# mdl_user_info_data_query = "SELECT * FROM `mdl_user_info_data`"
+# data_df = pd.read_sql(mdl_user_info_data_query, con = connection).set_index('id')
+# data_df = data_df.replace({"fieldid": field_df_dict})
+# nona_df = data_df[data_df["data"]!= ""]# na is represent as "", filter data that has no na
+# gender_df = nona_df[nona_df["fieldid"] == "gender"]
+# gender_df["data"] = gender_df["data"].str.replace(r'<[^<>]*>', '', regex=True)
+# gender_replace_dict = {
+#     'male男 ': '男', 
+#     'please click未填 ': '未填',
+#     '未填 ': '未填',
+#     'female女 ': '女',
+#     '女 ': '女', 
+#     '男 ': '男', 
+#     'please click ': '未填', 
+#     '未填\r': '未填', 
+#     '男\r': '男', 
+#     'male ': '男', 
+#     'female ': '女'
+# }
+# gender_df = gender_df.replace({"data": gender_replace_dict})
+# #gender_df["data"].value_counts()
+# gender_count_df = pd.DataFrame(gender_df["data"].value_counts()).reset_index()
+# st.markdown('### 📩註冊者:blue[性別]分佈')
+# gender_pie_chart = px.pie(gender_count_df, values='data', names='index')# , title = "註冊者信箱分佈"
+# gender_pie_chart.update_traces(textposition='inside', textinfo='percent+label')
+# st.plotly_chart(gender_pie_chart)
 
 
 
@@ -47,9 +90,6 @@ color_list = ["#ff80ed", "#065535", "#000000", "#008080", "#ff0000", "#ffd700",
 
 #######################################
 # https://discuss.streamlit.io/t/select-all-checkbox-that-is-linked-to-selectbox-of-options/18521
-
-#######################################
-
 #######################################
 
 # page settings
@@ -85,7 +125,7 @@ if selected == "Home":
         st.session_state.register_year_select = register_year_list
 
     def check_change():
-    # this runs BEFORE the rest of the script when a change is detected 
+    # this runs BEFORE the rest of the script whe  n a change is detected 
     # from your checkbox to set selectbox
         if st.session_state.all_option:
             st.session_state.register_year_select = register_year_list
@@ -233,9 +273,6 @@ if selected == "other":
         email_pie_chart = px.pie(domain_count_df, values='count', names='domain')# , title = "註冊者信箱分佈"
         email_pie_chart.update_traces(textposition='inside', textinfo='percent+label')
         st.plotly_chart(email_pie_chart)
-        
-        
-
         # st.dataframe resources
         # https://docs.streamlit.io/library/api-reference/data/st.dataframe
         # https://docs.kanaries.net/tutorials/Streamlit/streamlit-dataframe

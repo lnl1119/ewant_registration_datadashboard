@@ -6,7 +6,7 @@
 
 1. 補齊原本有的圖表
 2. 連mysql database
-3. [選課概況](https://docs.google.com/spreadsheets/d/10NDPwwgctn-d_WxejotXFRmQHzWCONnT/edit#gid=898642238)
+3. 選課概況
 3. 數據的處理
     1. 用email domain 區分高中還是大學（高中會長大）
     2. 註冊人數填寫的資料能不能強制

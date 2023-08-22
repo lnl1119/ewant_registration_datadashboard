@@ -2,6 +2,8 @@ streamlit
 pandas
 plost
 plotly
-mysql-connector
+mysql-connector-python = 8.0.33
+mysql-client
+SQLAlchemy
 streamlit_option_menu
 hydralit_components
