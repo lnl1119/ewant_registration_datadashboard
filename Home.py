@@ -1,9 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import hydralit_components as hc
-
 import pandas as pd
-import plost
 import plotly.express as px
 import datetime
 
@@ -66,25 +63,12 @@ with open('style.css') as f:
 # gender_pie_chart.update_traces(textposition='inside', textinfo='percent+label')
 # st.plotly_chart(gender_pie_chart)
 
-
-
-# menu_data = [
-#     {'label':"🏠"},
-#     {'label':"other"},
-# ]
-
-# menu_id = hc.nav_bar(menu_definition=menu_data, sticky_mode='pinned')
-
-
 ####################################################################
 ############################### data ###############################
 ####################################################################
-
 login_20162022_raw = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/login_2016to2022.csv")
 register_20142022_raw = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/register_2014to2022.csv")
-login_20162022_done = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/login_20162022_done.csv")
 register20230717_df = pd.read_csv("https://raw.githubusercontent.com/lnl1119/ewant_registration_datadashboard/main/registerdata20230717.csv")
-    
 ####################################################################
 ############################# variable #############################
 ####################################################################
@@ -249,16 +233,6 @@ if selected == "註冊人數":
         fig.update_xaxes(tickangle=45)
         st.plotly_chart(fig, theme="streamlit", use_container_width=True,height=700)
     # with Btab3:
-    #     plost.time_hist(
-    #     data=login_20162022_done,
-    #     date='date',
-    #     x_unit='week',
-    #     y_unit='day',
-    #     color='value',
-    #     aggregate='median',
-    #     legend=None,
-    #     height=345,
-    #     use_container_width=True)
 
 #####################################################
 ####################### page 3 ######################

@@ -1,8 +1,6 @@
 streamlit
+streamlit_option_menu
 pandas
-plost
 plotly
 mysql-client
 SQLAlchemy
-streamlit_option_menu
-hydralit_components
